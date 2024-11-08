@@ -103,8 +103,13 @@ const UserController = {
                         message: "User updated successfully",
                     })
                 })
-                .catch((err) => {
-                    throw err;
+                .catch((error) => {
+                    res.status(500).send({
+                        isSuccessfull: false,
+                        data: error,
+                        message: "Internal Server Error",
+                        error: error.message,
+                    });
                 });
 
         } catch (error) {
@@ -128,7 +133,7 @@ const UserController = {
                         message: "User deleted successfully",
                     })
                 })
-                .catch((err) => {
+                .catch((error) => {
                     res.status(500).send({
                         isSuccessfull: false,
                         data: null,

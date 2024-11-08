@@ -37,7 +37,12 @@ const AuthController = {
             });
           })
           .catch((err) => {
-            throw err;
+            res.status(500).send({
+              isSuccessfull: false,
+              data: null,
+              message: "Internal Server Error",
+              error:err.message
+            });
           });
       }
     } catch (error) {
@@ -86,10 +91,11 @@ const AuthController = {
         isSuccessfull: false,
         data: null,
         message: "Internal Server Error",
+        error:error.message
       });
     }
   },
-  
+
 };
 
 module.exports = AuthController;
