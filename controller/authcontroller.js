@@ -89,32 +89,7 @@ const AuthController = {
       });
     }
   },
-
-  checkauth: () => {},
   
-  // protected: async (req, res, next) => {
-  //   let token = req.headers?.authorization?.split(" ")[1];
-  //   if (!token) {
-  //     res.status(401).send({
-  //       isSuccessfull: false,
-  //       message: "User Unauthorized",
-  //       data: null,
-  //     });
-  //     return;
-  //   }
-
-  //   const loggedInUser = await jwt.verify(token, process.env.SECURITY_KEY);
-  //   console.log(loggedInUser);
-  //   if (loggedInUser?._doc) {
-  //     next();
-  //   } else {
-  //     res.status(401).send({
-  //       isSuccessfull: false,
-  //       message: "User Unauthorized",
-  //       data: null,
-  //     });
-  //   }
-  // },
 };
 
 module.exports = AuthController;
